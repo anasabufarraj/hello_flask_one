@@ -4,4 +4,17 @@
 # ------------------------------------------------------------------------------
 """Learning Flask"""
 
-from application import APP
+from flask import Flask
+
+APP = Flask(__name__)
+
+
+@APP.route('/')
+@APP.route('/index')
+def home():
+    """Returns home page contents."""
+    return '<h1>Hello Earth!</h1>'
+
+
+if __name__ == '__main__':
+    APP.run()
